@@ -15,6 +15,9 @@ namespace Formation.TagHelpers
         {
             this.restaurantService = restaurantService;
         }
+
+        // this tag helper work in list restaurant (Restaurant/List)
+        // it's use it to count number of customers and if list of customer is vide display vide! message 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "count";
