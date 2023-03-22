@@ -1,0 +1,23 @@
+﻿@page "{id:int}"
+@model Formation.Pages.Restaurants.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+
+}
+
+<h1>Details Of Restaurant</h1>
+
+<div class="mt-2">
+    <div class="mb-1">
+        Id: @Model.restaurant.Id
+    </div>
+    <div class="mb-1">
+        Name: @Model.restaurant.Name
+    </div>
+    <div class="mb-1">
+        Description: @Model.restaurant.Description
+    </div>
+</div>
+
+
+<a asp-page="./List" class="btn btn-secondary">All Restaurants</a>

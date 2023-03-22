@@ -1,0 +1,46 @@
+﻿@page
+@model Formation.Pages.Restaurant.ListModel
+@{
+}
+
+<h1>Liste of Restaurants</h1>
+<condition name="Restauran"></condition>
+
+<table class="table mt-4">
+    <a asp-page="./Create" class="btn btn-primary px-4 py-2 text-white mb-2">Create New Restaurant</a>
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <td>Action</td>
+    </thead>
+   <tbody>
+        @foreach(var restaurant in Model.Restaurants)
+        {
+        <tr>
+            <td>@restaurant.Id</td>
+            <td>@restaurant.Name</td>
+            <td>@restaurant.Description</td>
+            <td>
+                 <a
+                  class="text-primary mr-1 text-decoration-none"
+                   asp-page="./Detail"
+                   asp-route-id="@restaurant.Id">
+                        Details
+                 </a>
+                    <a class="text-warning mr-1 text-decoration-none"
+                        asp-page="./Edit"
+                   asp-route-id="@restaurant.Id">
+                        Edit
+                    </a>
+                    <a 
+                        class="text-danger mr-1 text-decoration-none"
+                        asp-page="./Delete"
+                   asp-route-id="@restaurant.Id">
+                        Delete
+                    </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
